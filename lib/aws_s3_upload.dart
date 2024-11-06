@@ -22,6 +22,9 @@ class AwsS3 {
     /// AWS secret key
     required String secretKey,
 
+    /// AWS endpoint
+    required String endpoint,
+
     /// The name of the S3 storage bucket to upload  to
     required String bucket,
 
@@ -57,7 +60,6 @@ class AwsS3 {
     if (useSSL) {
       httpStr += 's';
     }
-    final endpoint = '$httpStr://$bucket.s3.$region.amazonaws.com';
 
     String? uploadKey;
 
